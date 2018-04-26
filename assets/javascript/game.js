@@ -62,7 +62,7 @@ var spacewordbank = ["Mass Effect", "Stellaris", "Alien Isolation","Faster Than 
 
     ChosenWord = spacewordbank[Math.floor(Math.random()* spacewordbank.length)];
 
-    // Creates Underscores in place of blanks
+    // Creates Underscores in place of blanks also allows for blank spaces in array
 
     for (var i = 0; i < ChosenWord.length; i++){
         if (ChosenWord[i] === ' '){
@@ -128,7 +128,7 @@ else{
  Loss();
 GameOver();
  }
-
+// adds losses and stops 8-bit track
  function Loss (){
 if( guessesLeft === 0){
     losses++;
@@ -140,7 +140,7 @@ if( guessesLeft === 0){
 Win();
  }
     
-
+// Has to be a better way to do this. Hides video and shows it when win condition met
 function Win(){
 if( ChosenWord.toLowerCase() === ChosenWordarr.join('').toLowerCase()){
     wins++;
@@ -155,7 +155,7 @@ if( ChosenWord.toLowerCase() === ChosenWordarr.join('').toLowerCase()){
 
 }
 }
-
+//My take on hangman, ship moves towards planet plays sound on every mistake.
 function Destroy(){
     
     if (guessesLeft == 6) {
@@ -194,7 +194,8 @@ function Destroy(){
     miss7.play();
     }
 }
-
+//messy figured out i didnt even need to do this but its here anyway
+//when game is lost, loser video plays while hiding planet and ship
 function GameOver() {
 
 
@@ -205,12 +206,13 @@ if (guessesLeft === 0 && !gameRunning){
     planet.hidden=true;
     ship.hidden=true;
 }
-
+//plays the background music at like 50%? or was it the background music i dont remember
 }
  function Sound() {
      target.play();
      target.volume()=0.5;
  }
+ //set up to play alert sound on every alert
 function Alert() {
     var ALERT=document.getElementById('alertsound');
     ALERT.play();
@@ -219,11 +221,11 @@ function Alert() {
 
 
 
- //button
+ //buttons//basically starts the game on click and also plays a sound, couldnt link it into one event.
  
  Save.addEventListener('click', start);
  Save.addEventListener('click', Sound);
- //on key up event
+ //on key up event, searches for keycodes designated a-z.
 
  document.onkeyup = function (event) {
      console.log(event);
