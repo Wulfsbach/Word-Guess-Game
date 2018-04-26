@@ -8,13 +8,13 @@ left:50%;
 #spaceship{
     float: left;
     position: relative;
-    right:100%;
+    right:60%;
 }
 
 #planet{
     float:right;
        position: relative;
-       left:200%;
+       left:150%;
 }
 
 #movingbackground{
@@ -22,10 +22,36 @@ left:50%;
     top:0%;
     left:50;
     min-width:100%;
-    max-width:100%;
-    
+    max-width:120%;
+    z-index: -100;
     width:auto;
     height:auto:
+    
 
 }
 
+#gameover {
+    width:100%;
+    height:80%;
+    border-style: solid white;
+    
+}
+
+h2, h3{
+    color: white;
+    padding-bottom:50px;
+    padding-top:50px;
+}
+#placeholders{
+    letter-spacing: 0.5rem;
+}
+
+h1{
+    color:white;
+    text-align: center;
+}
+#gamewin{
+    width:100%;
+    height:80%;
+    border-style:solid white;
+}

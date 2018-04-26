@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">       
          <link rel="stylesheet" href="./assets/css/style.css">  
     </head>
-    <body class="background">
+    <body>
         <video autoplay loop muted id="movingbackground">
             <source src="./assets/images/Space Loop 3440x1440.mp4" type="video/mp4">
 
@@ -19,13 +19,64 @@
          <source src="./assets/sound/SpaceGone.mp3" hidden="true">
      </audio>    
     </div>
+    <div id="player2">
+        <audio  id="startsound" hidden controls>
+            <source src="./assets/sound/targetprotocol.wav" hidden="true">
+        </audio>
+    </div>
+    <div id="player3">
+            <audio  id="loss1" hidden controls>
+                <source src="./assets/sound/We Impose Order.mp3" hidden="true">
+            </audio>
+        </div>
+        <div id="player4">
+                <audio  id="loss2" hidden controls>
+                    <source src="./assets/sound/Vanguard of Destruction.mp3" hidden="true">
+                </audio>
+            </div>
+            <div id="player5">
+                    <audio  id="loss3" hidden controls>
+                        <source src="./assets/sound/WeAreLegion.wav" hidden="true">
+                    </audio>
+                </div>
+                <div id="player6">
+                        <audio  id="loss4" hidden controls>
+                            <source src="./assets/sound/You Exist Because We Allow It.mp3" hidden="true">
+                        </audio>
+                    </div>
+                    <div id="player7">
+                            <audio  id="loss5" hidden controls>
+                                <source src="./assets/sound/Transcend Understanding.mp3" hidden="true">
+                            </audio>
+                        </div>
+                        <div id="player8">
+                                <audio  id="loss6" hidden controls>
+                                    <source src="./assets/sound/EmergencyShutdown.wav" hidden="true">
+                                </audio>
+                            </div>
+                            <div id="player9">
+                                    <audio  id="loss7" hidden controls>
+                                        <source src="./assets/sound/You Wither And Die.mp3" hidden="true">
+                                    </audio>
+                                </div>
+                                <div id="player10">
+                                <audio  id="alertsound" hidden controls>
+                                    <source src="./assets/sound/Alert.wav" hidden="true">
+                                </audio>
+                            </div>
     
-  
+ 
         <div class="container background ">
             <div class="row">
                 <video id="gameover" hidden="true">
                  <source src="./assets/images/GameOver.mp4">
                 </video>
+
+                <video id="gamewin" hidden="true">
+                        <source src="./assets/images/GameWin.mp4">
+                       </video>
+
+                
                 <div class="col-12 col-md-4">
                      <img src="./assets/images/spaceship.gif" alt="spaceship" id="spaceship" class="img-fluid">
                     </div>
@@ -49,26 +100,26 @@
                     </div>
 
                 </div>
-            <div class="row">
-                <div class="col=12 col-md-4 text-center ">
+            <div class="row" id="shift">
+                <div class="col-12 col-md-4 text-center ">
                     <h3>
                         Ammo: <span id="Guesses-Left">0</span>
                     </h3>
                 </div>
-                <div class="col=12 col-md-4 text-center ">
+                <div class="col-12 col-md-4 text-center ">
                         <h3>
                             Planets Saved: <span id="Wins">0</span>
                         </h3>
                     </div>
-                    <div class="col=12 col-md-4 text-center ">
-                            <h3>
-                                Planets Destroyed: <span id="Losses">0</span>
-                            </h3>
+                    <div class="col-12 col-md-4 text-center ">
+                        <h3>
+                            Planets Destroyed: <span id="Losses">0</span>
+                         </h3>
                         </div>
             </div>
             <div class="row text-center">
                 <div class= "col-12 col-md-6">
-                    <button id="Save" class="btn btn-primary">
+                    <button id="World" class="btn btn-primary">
                    <h4>
                        Save The Galaxy!
                    </h4>

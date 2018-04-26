@@ -1,5 +1,5 @@
 //Create References
-var Save = document.getElementById('Save');
+var Save = document.getElementById('World');
 var placeholder = document.getElementById('placeholders');
 var LettersGuessed = document.getElementById('guessed-letters');
 var RemainingGuesses = document.getElementById('Guesses-Left');
@@ -7,6 +7,15 @@ var winner = document.getElementById('Wins');
 var loser = document.getElementById('Losses');
 var ship = document.getElementById('spaceship');
 var YouLose =document.getElementById("gameover");
+var target= document.getElementById('startsound');
+var YouWin= document.getElementById('gamewin');
+var miss1= document.getElementById('loss1');
+var miss2= document.getElementById('loss2');
+var miss3= document.getElementById('loss3');
+var miss4= document.getElementById('loss4');
+var miss5= document.getElementById('loss5');
+var miss6= document.getElementById('loss6');
+var miss7= document.getElementById('loss7');
 
 // create variables
 var spacewordbank = ["Mass Effect", "Stellaris", "Alien Isolation","Faster Than Light",
@@ -28,7 +37,7 @@ var spacewordbank = ["Mass Effect", "Stellaris", "Alien Isolation","Faster Than 
 
 
  function start() {
-
+ 
     gameRunning= true;
     guessesLeft=7;
     GuessedLetters= [];
@@ -41,6 +50,11 @@ var spacewordbank = ["Mass Effect", "Stellaris", "Alien Isolation","Faster Than 
     ship.hidden=false;
     YouLose.pause();
      document.getElementById("myAudio").volume=0.2;
+     YouWin.hidden=true;
+    YouWin.pause();
+    
+    ship.hidden=false;
+    planet.hidden=false;
    
 
     
@@ -87,8 +101,10 @@ Incorrect(letter);
 else{
     if(!gameRunning) {
         alert("Press the Button to save the world!")
+        Alert();
     } else {
         alert("This button has already been pressed!")
+        Alert();
     }
 }
  }
@@ -131,6 +147,12 @@ if( ChosenWord.toLowerCase() === ChosenWordarr.join('').toLowerCase()){
     gameRunning=false;
     winner.innerHTML = wins;
     document.getElementById("myAudio").volume=0;
+    YouWin.hidden=false;
+    YouWin.load();
+    YouWin.play();
+    ship.hidden=true;
+    planet.hidden=true;
+
 }
 }
 
@@ -139,37 +161,37 @@ function Destroy(){
     if (guessesLeft == 6) {
         pos++;
         ship.style.left = pos + '2px';
-
+    miss1.play();
     }
     if (guessesLeft == 5) {
         pos++;
         ship.style.left = pos + '10px';
-
+     miss2.play();
     }
     if (guessesLeft == 4) {
         pos++;
         ship.style.left = pos + '10px';
-
+    miss3.play();
     }
     if (guessesLeft == 3) {
         pos++;
         ship.style.left = pos + '10px';
-
+    miss4.play();
     }
     if (guessesLeft == 2) {
         pos++;
         ship.style.left = pos + '20px';
-
+    miss5.play();
     }
     if (guessesLeft == 1) {
         pos++;
         ship.style.left = pos + '20px';
-
+    miss6.play();
     }
     if (guessesLeft == 0) {
         pos++;
         ship.style.left = pos + '40px';
-
+    miss7.play();
     }
 }
 
@@ -185,13 +207,22 @@ if (guessesLeft === 0 && !gameRunning){
 }
 
 }
+ function Sound() {
+     target.play();
+     target.volume()=0.5;
+ }
+function Alert() {
+    var ALERT=document.getElementById('alertsound');
+    ALERT.play();
+    ALERT.volume()=0.5
+}
 
 
 
  //button
  
- Save.addEventListener('click', start,);
-
+ Save.addEventListener('click', start);
+ Save.addEventListener('click', Sound);
  //on key up event
 
  document.onkeyup = function (event) {
