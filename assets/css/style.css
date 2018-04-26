@@ -1,0 +1,31 @@
+.btn{
+height:50px;
+ width:40%;
+position: relative;
+left:50%;
+}
+
+#spaceship{
+    float: left;
+    position: relative;
+    right:100%;
+}
+
+#planet{
+    float:right;
+       position: relative;
+       left:200%;
+}
+
+#movingbackground{
+    position:fixed;
+    top:0%;
+    left:50;
+    min-width:100%;
+    max-width:100%;
+    
+    width:auto;
+    height:auto:
+
+}
+
