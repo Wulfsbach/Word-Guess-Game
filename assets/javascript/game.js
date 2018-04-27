@@ -20,7 +20,8 @@ var miss7= document.getElementById('loss7');
 // create variables
 var spacewordbank = ["Mass Effect", "Stellaris", "Alien Isolation","Faster Than Light",
  "No Mans Sky","Surviving Mars", "Destiny", "Halo", "Starbound", "Spore", "Star Wars The Old Republic", 
- "Prey", "Dead Space","Star Fox","Metroid"];
+ "Prey", "Dead Space","Star Fox","Metroid", "Kerbal Space Program"," Eve Online", "Fractured Space", "Space Engineers",
+"Homeworld","Galactic Civilization","Elite Dangerous","Tacoma"," Everspace","Universe Sandbox","Take On Mars","Osiris"];
 
  var wins=0;
  var losses=0;
